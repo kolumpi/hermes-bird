@@ -4,20 +4,20 @@ var acceleration = 20
 var lastJump = 0
 var jumpCooldown = 600
 
-var gameRunning = true
-
 func _ready():
+	Global.alive = true
 	startGame()
 
 func _physics_process(_delta: float):
-	if gameRunning:
+	if Global.alive:
 		movement()
 
 func movement():
 
 	if Input.is_action_just_pressed("ui_accept"):
 		if Time.get_ticks_msec() > lastJump + jumpCooldown:    
-			velocity.y = -800
+			velocity.y = -600 - (velocity.y * 0.3       )
+			
 			
 			lastJump = Time.get_ticks_msec()
 	
@@ -36,17 +36,22 @@ func movement():
 	
 	if get_slide_collision_count() > 0:
 		die()
+		
  
 
 func die():
-	gameRunning = false
+	Global.alive = false
+	Global.score = 0
 	startGame()
 	
+	
 func startGame():
-	gameRunning = true
+	Global.alive = true
 	position.x = 0
 	position.y = 0
 	velocity.x = 0
-	velocity.y = 0.01
+	velocity.y = 0
 	
-	
+func increaseScore():
+	if Global.alive:
+		Global.score = Global.score + 1

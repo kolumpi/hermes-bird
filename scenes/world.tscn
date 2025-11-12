@@ -1,16 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0hcx65gv0ui2"]
+[gd_scene load_steps=10 format=3 uid="uid://d0hcx65gv0ui2"]
 
 [ext_resource type="PackedScene" uid="uid://cejgstdv2m8w8" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://e1iv6gtubjuv" path="res://scripts/background.gd" id="2_4wyf3"]
-[ext_resource type="Texture2D" uid="uid://ct1omjgjtxry7" path="res://art/background.png" id="2_rwgxs"]
+[ext_resource type="Texture2D" uid="uid://bgim42a713cdg" path="res://art/background.png" id="2_rwgxs"]
 [ext_resource type="Script" uid="uid://fb3o2ia0b1qv" path="res://scripts/obstacle_spawner.gd" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://byhx3c7whvo27" path="res://scenes/obstacle.tscn" id="5_71j4m"]
+[ext_resource type="Script" uid="uid://cwdho30h1l0n7" path="res://scripts/score_display.gd" id="6_qfnet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwgxs"]
 size = Vector2(1920, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
 size = Vector2(1920, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_71j4m"]
+font_size = 200
 
 [node name="World" type="Node2D"]
 
@@ -42,3 +46,12 @@ shape = SubResource("RectangleShape2D_4wyf3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
+
+[node name="Score" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 832.0
+offset_right = 1029.0
+offset_bottom = 1105.0
+text = "Score"
+label_settings = SubResource("LabelSettings_71j4m")
+script = ExtResource("6_qfnet")

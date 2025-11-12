@@ -8,3 +8,6 @@ func _process(delta):
 	# Wenn das Hindernis links raus ist, löschen 
 	if position.x < -200:
 		queue_free()
+		
+	if Global.alive == false:
+		queue_free()

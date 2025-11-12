@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnglhb3gx281q" path="res://art/charakter.png" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(129.5, 128)
+size = Vector2(96, 128)
 
 [node name="Player" type="Node2D"]
 
@@ -17,5 +17,10 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0.75, 0)
+position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="score" type="Timer" parent="Player"]
+autostart = true
+
+[connection signal="timeout" from="Player/score" to="Player" method="increaseScore"]
