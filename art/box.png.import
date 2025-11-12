@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt5ru3rh6crbi"
-path="res://.godot/imported/hermes.jpg-02fcb854638507bcfb514336000d72e2.ctex"
+uid="uid://bb7vlrnahsqx8"
+path="res://.godot/imported/box.png-0dcfa2e0705760a5bed75d0ae36cd30e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/hermes.jpg"
-dest_files=["res://.godot/imported/hermes.jpg-02fcb854638507bcfb514336000d72e2.ctex"]
+source_file="res://art/box.png"
+dest_files=["res://.godot/imported/box.png-0dcfa2e0705760a5bed75d0ae36cd30e.ctex"]
 
 [params]
 
