@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cejgstdv2m8w8"]
+[gd_scene load_steps=3 format=3 uid="uid://cejgstdv2m8w8"]
 
 [ext_resource type="Script" uid="uid://ch263ydaqexqp" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://dnglhb3gx281q" path="res://art/charakter.png" id="2_g2els"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(96, 128)
+[ext_resource type="Texture2D" uid="uid://bsuv22nb2ib6d" path="res://art/hermes_v1.png" id="2_g2els"]
 
 [node name="Player" type="Node2D"]
 
@@ -13,14 +10,12 @@ script = ExtResource("1_3vyb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 1
-scale = Vector2(4, 4)
 texture = ExtResource("2_g2els")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(8, 0)
-shape = SubResource("RectangleShape2D_g2els")
 
 [node name="score" type="Timer" parent="Player"]
 autostart = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PackedVector2Array(27, 5, 51, -82, 126, -67, 212, -76, 205, -24, 234, -24, 232, -76, 248, -98, 254, -124, 244, -155, 265, -275, 311, -278, 355, -310, 356, -328, 317, -327, 288, -342, 262, -334, 253, -352, 234, -352, 225, -331, 199, -340, 125, -323, 162, -285, 201, -277, 206, -140, 21, -174, 35, -247, -14, -286, -78, -289, -115, -317, -171, -311, -272, -294, -270, -264, -213, -226, -143, -223, -149, -160, -219, -137, -259, 0, -257, 118, -228, 152, -320, 204, -367, 260, -367, 286, -328, 352, -294, 361, -275, 337, -275, 302, -205, 275, -194, 333, -144, 371, -107, 381, -80, 381, -79, 350, -89, 329, 23, 253, 18, 129, 24, 97)
 
 [connection signal="timeout" from="Player/score" to="Player" method="increaseScore"]
