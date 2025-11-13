@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbcmbp5ubioki"
+path="res://.godot/imported/Wings of Hermes.mp3-a979549b26b7ec93cf188a6a5854a57b.mp3str"
+
+[deps]
+
+source_file="res://audio/Wings of Hermes.mp3"
+dest_files=["res://.godot/imported/Wings of Hermes.mp3-a979549b26b7ec93cf188a6a5854a57b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

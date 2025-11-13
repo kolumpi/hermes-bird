@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0hcx65gv0ui2"]
+[gd_scene load_steps=12 format=3 uid="uid://d0hcx65gv0ui2"]
 
+[ext_resource type="Texture2D" uid="uid://bs1k427c0fpgl" path="res://art/cloud_background.png" id="1_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://cejgstdv2m8w8" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://e1iv6gtubjuv" path="res://scripts/background.gd" id="2_4wyf3"]
-[ext_resource type="Texture2D" uid="uid://bgim42a713cdg" path="res://art/background.png" id="2_rwgxs"]
 [ext_resource type="Script" uid="uid://fb3o2ia0b1qv" path="res://scripts/obstacle_spawner.gd" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://byhx3c7whvo27" path="res://scenes/obstacle.tscn" id="5_71j4m"]
 [ext_resource type="Script" uid="uid://cwdho30h1l0n7" path="res://scripts/score_display.gd" id="6_qfnet"]
+[ext_resource type="Texture2D" uid="uid://dyqbf25koy5d3" path="res://art/icon.svg" id="7_i7141"]
+[ext_resource type="AudioStream" uid="uid://cbcmbp5ubioki" path="res://audio/Wings of Hermes.mp3" id="8_4mrxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwgxs"]
 size = Vector2(1920, 1)
@@ -20,9 +22,9 @@ font_size = 200
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 2000.0
-offset_bottom = 1080.0
-texture = ExtResource("2_rwgxs")
+offset_right = 3840.0
+offset_bottom = 1296.0
+texture = ExtResource("1_4mrxx")
 stretch_mode = 1
 script = ExtResource("2_4wyf3")
 metadata/_edit_use_anchors_ = true
@@ -55,3 +57,18 @@ offset_bottom = 1105.0
 text = "Score"
 label_settings = SubResource("LabelSettings_71j4m")
 script = ExtResource("6_qfnet")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("7_i7141")
+stretch_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_4mrxx")
+autoplay = true
