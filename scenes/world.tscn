@@ -35,9 +35,9 @@ obstacle_scene = ExtResource("5_71j4m")
 
 [node name="Player" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(960, 540)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.25, 0.25)
 
-[node name="deathZone" type="StaticBody2D" parent="."]
+[node name="deathZone" type="StaticBody2D" parent="." groups=["obstacles"]]
 
 [node name="bottom" type="CollisionShape2D" parent="deathZone"]
 position = Vector2(960, 1080.5)

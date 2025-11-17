@@ -27,15 +27,15 @@ func movement():
 		
 	move_and_slide()
 	
-	#for i in range(get_slide_collision_count()):
-	#	var collision = get_slide_collision(i)
-	#	var collider = collision.get_collider()
-	#	if collider != null:
-	#		print("Kollision mit:", collider.name)
-	#		startGame()
 	
-	if get_slide_collision_count() > 0:
-		die()
+	for i in get_slide_collision_count():
+		var col = get_slide_collision(i).get_collider()
+
+		if col.is_in_group("obstacles"):
+			die()
+
+		#if col.is_in_group("coins"):
+		#	col.collect()  # oder queue_free()
 		
  
 
