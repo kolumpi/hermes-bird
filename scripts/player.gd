@@ -4,9 +4,17 @@ var acceleration = 20
 var lastJump = 0
 var jumpCooldown = 600
 
+@export var throwableBoxScene: PackedScene
+
 func _ready():
 	Global.alive = true
 	startGame()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_right"):
+		var obstacle = throwableBoxScene.instantiate()
+		obstacle.position = Vector2(100, 100)
+		add_child(obstacle)
 
 func _physics_process(_delta: float):
 	if Global.alive:
@@ -31,7 +39,7 @@ func movement():
 	for i in get_slide_collision_count():
 		var col = get_slide_collision(i).get_collider()
 
-		if col.is_in_group("obstacles"):
+		if col.is_in_group("deadly"):
 			die()
 
 		#if col.is_in_group("coins"):
@@ -41,12 +49,17 @@ func movement():
 
 func die():
 	Global.alive = false
-	Global.score = 0
-	startGame()
+	var tree = get_tree()
+		
+	if tree != null:
+		get_tree().change_scene_to_file("res://scenes/deathscreen.tscn")
+	else:
+		printerr("Error while loading deathscreen.")
 	
 	
 func startGame():
 	Global.alive = true
+	Global.score = 0
 	position.x = 0
 	position.y = 0
 	velocity.x = 0
