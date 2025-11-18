@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://byhx3c7whvo27"]
+
+[ext_resource type="Script" uid="uid://d4l48ji70rlph" path="res://scripts/cow.gd" id="1_drdry"]
+[ext_resource type="Texture2D" uid="uid://b7qwrvp6llmqu" path="res://art/Calf.png" id="2_drdry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ukg5"]
+size = Vector2(145, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjuko"]
+atlas = ExtResource("2_drdry")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh7k1"]
+atlas = ExtResource("2_drdry")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4xvc"]
+atlas = ExtResource("2_drdry")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oy3q"]
+atlas = ExtResource("2_drdry")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0drx6"]
+atlas = ExtResource("2_drdry")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcfqo"]
+atlas = ExtResource("2_drdry")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4pg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjuko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh7k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4xvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oy3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0drx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcfqo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["deadly", "obstacle", "obstacles"]]
+script = ExtResource("1_drdry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12.5, 0)
+shape = SubResource("RectangleShape2D_7ukg5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_u4pg3")
+autoplay = "default"
+frame = 1
+frame_progress = 0.007115696

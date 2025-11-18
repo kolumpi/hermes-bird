@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhlrfhwwvcom4"]
+
+[ext_resource type="Script" uid="uid://wfjm65vsmmfm" path="res://scripts/throwableBox.gd" id="1_siw4f"]
+[ext_resource type="Texture2D" uid="uid://bb7vlrnahsqx8" path="res://art/box.png" id="1_uhwvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_siw4f"]
+
+[node name="ThrowableBox" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_siw4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_siw4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_uhwvc")
