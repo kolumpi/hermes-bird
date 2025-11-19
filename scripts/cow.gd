@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var move_speed = Global.obstacleBaseSpeed * randf_range(0.5, 1.5)
+var move_speed = Global.obstacleBaseSpeed * randf_range(0.9, 1.1)
 
 func _process(delta):
 	position.x -= move_speed * delta

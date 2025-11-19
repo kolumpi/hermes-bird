@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v1x0a0t1ra73"
-path="res://.godot/imported/game-over-background.png-6c898cc321346d7c22fb5838fc76c5c2.ctex"
+uid="uid://dqfc2qrxmuv4d"
+path="res://.godot/imported/deathscreen_background.png-7ec68247ab42ab5dba9f0beed45fb092.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/game-over-background.png"
-dest_files=["res://.godot/imported/game-over-background.png-6c898cc321346d7c22fb5838fc76c5c2.ctex"]
+source_file="res://art/deathscreen_background.png"
+dest_files=["res://.godot/imported/deathscreen_background.png-7ec68247ab42ab5dba9f0beed45fb092.ctex"]
 
 [params]
 

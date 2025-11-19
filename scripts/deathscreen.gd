@@ -1,15 +1,13 @@
-extends Node
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("TEST")
+	if Global.score > Global.highScore:
+		Global.highScore = Global.score
+		
+	$HighscoreLabel.text = "Highscore: " + str(Global.highScore)
 	$ScoreLabel.text = "Your Score: " + str(Global.score)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func _on_new_game_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/deathscreen.tscn")
+func on_new_game_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/world.tscn")

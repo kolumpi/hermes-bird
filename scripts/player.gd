@@ -22,7 +22,7 @@ func _physics_process(_delta: float):
 
 func movement():
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("Jump"):
 		if Time.get_ticks_msec() > lastJump + jumpCooldown:    
 			velocity.y = -600 - (velocity.y * 0.3       )
 			
@@ -49,6 +49,7 @@ func movement():
 
 func die():
 	Global.alive = false
+	
 	var tree = get_tree()
 		
 	if tree != null:
